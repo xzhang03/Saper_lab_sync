@@ -6,6 +6,7 @@
 #define pin_readyLED PIN_B4
 #define pin_swtich PIN_D7
 #define pin_LED PIN_D6
+#define pin_LED_blue PIN_B6 // blue LED, currently unused
 
 // Flags
 bool sysready = false;
@@ -28,6 +29,7 @@ void setup(){
   pinMode(pin_TTL, OUTPUT);
   pinMode(pin_readyLED, OUTPUT);
   pinMode(pin_LED, OUTPUT);
+  pinMode(pin_LED_blue, OUTPUT);
   pinMode(pin_swtich, INPUT_PULLUP); 
 
   // flags
@@ -40,6 +42,7 @@ void setup(){
   digitalWrite(pin_TTL, LOW);
   digitalWrite(pin_readyLED, LOW);
   digitalWrite(pin_LED, LOW);
+  digitalWrite(pin_LED_blue, LOW);
 
   // t0
   t0 = micros();
