@@ -17,7 +17,7 @@ bool readyled = false;
 unsigned int buzzfreq = 2000;
 
 // Time
-unsigned int cycle = 31333;
+unsigned int cycle = 33333;
 unsigned int pulse_width = 2000;
 unsigned int stepsize = 100;
 
