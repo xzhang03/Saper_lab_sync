@@ -3,12 +3,25 @@
 
 #define debugmode false // Debug
 
-#define pin_audio PIN_C6
-#define pin_TTL PIN_B5
-#define pin_readyLED PIN_B4
-#define pin_swtich PIN_D7
-#define pin_LED PIN_D6
-#define pin_LED_blue PIN_B6 // blue LED, currently unused
+// Set one of the two below as true to set the board
+#define teensy2 true // Teensy 2.0
+#define itsybitsy5v false // Itsy bitsy 5V
+
+#if teensy2
+  #define pin_audio PIN_C6
+  #define pin_TTL PIN_B5
+  #define pin_readyLED PIN_B4
+  #define pin_swtich PIN_D7
+  #define pin_LED PIN_D6
+  #define pin_LED_blue PIN_B6 // blue LED, currently unused
+#elif itsybitsy5v
+  #define pin_audio 11 // Need PWM on this pin (10, 11, 12 are options. Need to bridge them to 15 and set 15 to highZ.
+  #define pin_TTL 7
+  #define pin_readyLED 5
+  #define pin_swtich 3
+  #define pin_LED 2
+  #define pin_LED_blue 9 // blue LED, currently unused
+#endif
 
 // Flags
 bool sysready = false; // Flagged true during setup. Flag false to start pulsing
